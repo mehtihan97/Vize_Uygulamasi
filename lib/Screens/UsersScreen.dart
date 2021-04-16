@@ -51,7 +51,7 @@ class UState extends State<U> {
                       })),
               Row(children:[
                   Flexible(
-                      fit: FlexFit.tight,
+                      fit: FlexFit.loose,
                       flex: 7,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
@@ -59,8 +59,9 @@ class UState extends State<U> {
                         ),
                         child: Row(
                           children: <Widget>[
-                            SizedBox(width: 15.0),
-                            Text("                            KAYIT OL",style:TextStyle(fontSize:20) ,),
+                            SizedBox(width: 30.0),
+                            Icon(Icons.add,size:20),
+                            Center(child: Text("KAYIT OL",style:TextStyle(fontSize:20) ,)),
                           ],
                         ),
                         onPressed: () {

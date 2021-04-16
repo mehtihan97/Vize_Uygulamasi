@@ -15,8 +15,9 @@ class Cheryy extends StatelessWidget{
               mainAxisAlignment:MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
+                    height:MediaQuery.of(context).size.height *0.1 ,
                     child:Text(product3.name,style:TextStyle(
-                        fontSize:50,
+                        fontSize:40,
                         letterSpacing:0.5,
                         color:(Colors.white)
                     ) ,)
@@ -25,14 +26,15 @@ class Cheryy extends StatelessWidget{
                 Container(
                     margin:EdgeInsets.only(left:7 ) ,
                     child:Text(product3.description,style:TextStyle(
-                        fontSize:30,
+                        fontSize:20,
                         letterSpacing:0.5,
                         color:(Colors.white)
                     ) ,)
                 ),
                 Container(
+                  height:MediaQuery.of(context).size.height *0.1,
                   child:Text("ÜCRET ="+product3.price.toString()+" "+"YTL",style:TextStyle(
-                    fontSize:50,
+                    fontSize:40,
                     letterSpacing:0.5,
                     color:(Colors.white),
                   ) ,) ,

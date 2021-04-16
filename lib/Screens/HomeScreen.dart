@@ -7,8 +7,9 @@ class LoginPage extends StatelessWidget {
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
+              centerTitle:true,
               title: Text(
-                "           WELCOME",
+                "WELCOME",
                 style: TextStyle(letterSpacing: 1.5, fontSize: 35),
               ),
               backgroundColor: Colors.green,
@@ -27,12 +28,12 @@ class LoginPage extends StatelessWidget {
                 Center(
                     child: CircleAvatar(
                   radius: 200,
-                  backgroundImage: NetworkImage(
-                      "https://cdn.pixabay.com/photo/2015/03/21/10/26/environmental-protection-683437_960_720.jpg"),
+                  backgroundImage: AssetImage(
+                      "assets/images/anasayfa.jpg"),
                 )),
                 Container(
-                    height: 100,
-                    width: 200,
+                    height:100,
+                    width:200,
                     child: ElevatedButton(
                       style:ElevatedButton.styleFrom(
                         primary: Colors.green,

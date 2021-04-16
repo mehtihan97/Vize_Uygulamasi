@@ -25,8 +25,9 @@ class BasketState extends State<Basket> {
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
+              centerTitle:true,
                 backgroundColor: Colors.yellow,
-                title: (Text("           SEPET",
+                title: (Text("SEPET",
                     style: TextStyle(fontSize: 45, letterSpacing: 0.5)))),
             body: buildBody()));
   }

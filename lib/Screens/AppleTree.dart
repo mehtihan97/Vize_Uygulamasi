@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:vize_uygulamasi/Product/Products.dart';
 import 'package:vize_uygulamasi/Screens/BasketManager.dart';
@@ -21,11 +22,11 @@ class _ATreeState extends State {
               backgroundColor: (Colors.green),
               title: Text(
                 "ELMA FİDANI",
-                style: TextStyle(fontSize: 35, letterSpacing: 0.5),
+                style: TextStyle(fontSize:35, letterSpacing:0.5),
               ),
               actions: [
                 IconButton(
-                  icon: Icon(Icons.description, size: 35),
+                  icon: Icon(Icons.description, size:35),
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) => apple()));
@@ -33,84 +34,99 @@ class _ATreeState extends State {
                 ),
               ],
             ),
-            body: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Container(
-                  margin: EdgeInsets.only(top: 10),
-                  height: 600,
-                  child: Image(
-                      image: NetworkImage(
-                          "https://cdn.pixabay.com/photo/2015/03/27/00/58/apple-693971_960_720.jpg")),
-                ),
-                Row(
-                  children: <Widget>[
-                    Flexible(
-                        fit: FlexFit.tight,
-                        flex: 2,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.yellow,
-                          ),
-                          child: Row(
-                            children: <Widget>[
-                              Icon(Icons.navigate_before),
-                              SizedBox(width: 5.0),
-                              Text("GERİ"),
-                            ],
-                          ),
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => LoginPage()));
-                          },
-                        )),
-                    Flexible(
-                        fit: FlexFit.tight,
-                        flex: 3,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.red,
-                          ),
-                          child: Row(
-                            children: <Widget>[
-                              Icon(Icons.add),
-                              SizedBox(width: 5.0),
-                              Text("SEPETE EKLE"),
-                            ],
-                          ),
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Basket(product1)));
-                          },
-                        )),
-                    Flexible(
-                        fit: FlexFit.tight,
-                        flex: 2,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            primary: Colors.orange,
-                          ),
-                          child: Row(
-                            children: <Widget>[
-                              Icon(Icons.navigate_next),
-                              SizedBox(width: 5.0),
-                              Text("İLERİ"),
-                            ],
-                          ),
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => LTree()));
-                          },
-                        )),
-                  ],
-                )
-              ],
-            )));
+            body: SafeArea(
+              top:true,
+              bottom:true,
+              left:true,
+              right:true,
+              minimum:EdgeInsets.all(0.8) ,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Align(
+                    alignment:Alignment.center ,
+                    child: Container(
+                      width:double.infinity,
+                      height:MediaQuery.of(context).size.height*0.5 ,
+                      child: Image(
+                          image:AssetImage (
+                              "assets/images/apple-693971_1280.jpg")),
+                    ),
+                  ),
+                  Row(
+                    children: [
+                             Flexible(
+                                fit:FlexFit.loose,
+                                flex: 2,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    primary: Colors.yellow,
+                                  ),
+                                  child: Row(
+                                    children: <Widget>[
+                                      Icon(Icons.navigate_before),
+                                      SizedBox(width: 5.0),
+                                      Text("GERİ"),
+                                    ],
+                                  ),
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => LoginPage()));
+                                  },
+                                )),
+
+                          Flexible(
+                                fit: FlexFit.loose,
+                                flex: 3,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    primary: Colors.red,
+                                  ),
+                                  child: Row(
+                                    children: <Widget>[
+                                      Icon(Icons.add),
+                                      SizedBox(width:5.0),
+                                      Text("SEPETE EKLE"),
+                                    ],
+                                  ),
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => Basket(product1)));
+                                  },
+                                )),
+
+
+                             Flexible(
+                              fit: FlexFit.loose,
+                              flex:2,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.orange,
+                                ),
+                                child: Row(
+                                  children: <Widget>[
+                                    Icon(Icons.navigate_next),
+                                    SizedBox(width: 5.0),
+                                    Text("İLERİ"),
+                                  ],
+                                ),
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => LTree()));
+                                },
+                              )),
+                          ],
+                      ),
+        ],
+                  )
+            )
+              ),
+            );
   }
 }

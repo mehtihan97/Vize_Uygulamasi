@@ -30,8 +30,8 @@ class InformationScreensState extends State {
       body:
           Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Container(
-          height: 650,
-          width: 600,
+          height: MediaQuery.of(context).size.height * 0.7,
+          width: double.infinity,
           child: Marquee(
             text: "SATIN ALMAK İÇİN LÜTFEN KAYIT OLUN..!",
             style: TextStyle(
